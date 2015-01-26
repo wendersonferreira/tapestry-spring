@@ -156,6 +156,18 @@
             <artifactId>tapestry-spring</artifactId>
             <version>${tapestry.version}</version>
         </dependency>
+        <dependency>
+            <groupId>br.com.trustsystems</groupId>
+            <artifactId>super-dao</artifactId>
+            <version>${super-dao.version}</version>
+        </dependency>
+
+        <!-- cglib is required for type-safe proxies -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -175,5 +187,8 @@
         <eclipselink.version>2.5.2</eclipselink.version>
         <log4j.version>1.2.15</log4j.version>
         <tapestry.version>5.3.8</tapestry.version>
+        <cglib.version>2.2</cglib.version>
+        <super-dao.version>1.0.0-RC1</super-dao.version>
+        <h2.version>1.3.172</h2.version>
     </properties>
 </project>

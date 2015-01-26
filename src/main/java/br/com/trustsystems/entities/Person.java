@@ -1,36 +1,28 @@
-package br.com.trustsystems.model;
+package br.com.trustsystems.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-/**
- * Entity bean with JPA annotations
- * Hibernate provides JPA implementation
- * @author pankaj
- *
- */
 @Entity
-@Table(name="PERSON")
-public class Person {
+public class Person extends AbstractEntity<Long>{
 
 	@Id
-	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	private String name;
 	
 	private String country;
 
-	public int getId() {
+	private long version = -1;
+	
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -53,5 +45,10 @@ public class Person {
 	@Override
 	public String toString(){
 		return "id="+id+", name="+name+", country="+country;
+	}
+
+	@Override
+	public long getVersion() {
+		return version;
 	}
 }

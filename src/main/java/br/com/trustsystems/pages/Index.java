@@ -1,7 +1,7 @@
 package br.com.trustsystems.pages;
 
 import br.com.trustsystems.dao.PersonDAO;
-import br.com.trustsystems.model.Person;
+import br.com.trustsystems.entities.Person;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.beaneditor.BeanModel;
@@ -71,7 +71,7 @@ public class Index
 
 
 
-        dao.addPerson(person);
+        dao.persist(person);
         return null;
     }
     void setupRender() {
@@ -83,14 +83,15 @@ public class Index
         myModel.get("name").sortable(false);
         myModel.get("action").label("Operation");
         myModel.get("country").label("Country");
-        persons = dao.listPersons();
+        persons = dao.findAll();
 
     }
 
 
     void onDelete(Long id) {
         try {
-            dao.removePerson(id.intValue());
+            Person person = dao.findById(id);
+            dao.delete(person);
         }
         catch (Exception e) {
 

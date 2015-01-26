@@ -1,14 +1,24 @@
 package br.com.trustsystems.dao;
 
-import java.util.List;
+import br.com.trustsystems.database.DatabasePersistenceProvider;
+import br.com.trustsystems.entities.Person;
+import br.com.trustsystems.persistence.dao.IPersistenceProvider;
+import br.com.trustsystems.persistence.dao.TypedDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import br.com.trustsystems.model.Person;
+@Service
+public class PersonDAO extends TypedDao<Long, Person>{
 
-public interface PersonDAO {
+	@Autowired
+	DatabasePersistenceProvider databasePersistenceProvider;
+	
+	public PersonDAO() {
+		super(Long.class, Person.class);
+	}
 
-	public void addPerson(Person p);
-	public void updatePerson(Person p);
-	public List<Person> listPersons();
-	public Person getPersonById(int id);
-	public void removePerson(int id);
+	@Override
+	protected IPersistenceProvider getPersistenceProvider() {
+		return databasePersistenceProvider;
+	}
 }
