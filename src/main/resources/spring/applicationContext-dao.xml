@@ -17,7 +17,7 @@
           p:dataSource-ref="dataSource"
           p:persistenceXmlLocation="classpath*:META-INF/persistence.xml"
           p:jpaVendorAdapter-ref="jpaAdapter"
-          p:persistenceUnitName="daoPUnit">
+          p:persistenceUnitName="daoTapestrySpring">
 
         <property name="loadTimeWeaver">
             <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
