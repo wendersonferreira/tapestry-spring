@@ -195,7 +195,7 @@
         <javaee-api.version>6.0</javaee-api.version>
         <servlet-api.version>2.5</servlet-api.version>
         <junit.version>4.12</junit.version>
-        <mysql.version>5.1.34</mysql.version>
+        <mysql.version>8.0.23</mysql.version>
         <hikaricp.version>2.3.13</hikaricp.version>
         <eclipselink.version>2.6.3</eclipselink.version>
         <log4j.version>1.2.17</log4j.version>

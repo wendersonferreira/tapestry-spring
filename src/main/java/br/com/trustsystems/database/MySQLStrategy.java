@@ -11,7 +11,7 @@ public class MySQLStrategy implements DatabaseStrategy
     @Override
     public String getDriver()
     {
-        return com.mysql.jdbc.Driver.class.getName();
+        return com.mysql.cj.jdbc.MysqlDataSource.class.getName();
     }
 
     @Override
