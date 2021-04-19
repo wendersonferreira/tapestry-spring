@@ -12,7 +12,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.BeanModelSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class Index
     static final Logger logger = LoggerFactory.getLogger(Index.class);
 
     @Inject
-    private PersonDAO dao;
+    private PersonDAO personDAO;
 
     @Property
     private String name;
@@ -67,13 +67,10 @@ public class Index
         person = new Person();
         person.setName(name);
         person.setCountry(country);
-
-
-
-
-        dao.persist(person);
+        personDAO.persist(person);
         return null;
     }
+    
     void setupRender() {
 
         logger.info("Bean model has been invoked");
@@ -83,15 +80,15 @@ public class Index
         myModel.get("name").sortable(false);
         myModel.get("action").label("Operation");
         myModel.get("country").label("Country");
-        persons = dao.findAll();
+		persons = personDAO.findAll();
 
     }
 
-
+    @Transactional
     void onDelete(Long id) {
         try {
-            Person person = dao.findById(id);
-            dao.delete(person);
+            Person person = personDAO.findById(id);
+            personDAO.delete(person);
         }
         catch (Exception e) {
 

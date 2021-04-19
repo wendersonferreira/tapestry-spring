@@ -8,5 +8,4 @@
 	<context:component-scan base-package="br.com.trustsystems" />
 
 	<import resource="applicationContext-dao.xml"/>
-	<import resource="eclipselink-integration.xml"/>
 </beans>

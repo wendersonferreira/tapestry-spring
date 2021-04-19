@@ -1,23 +1,24 @@
 package br.com.trustsystems.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class Person {
 
-@Entity
-public class Person extends AbstractEntity<Long>{
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String name;
-	
+
 	private String country;
 
-	private long version = -1;
-	
+	public Person() {
+		//
+	}
+
+	public Person(Long id, String name, String country) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.country = country;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -41,14 +42,9 @@ public class Person extends AbstractEntity<Long>{
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
-	@Override
-	public String toString(){
-		return "id="+id+", name="+name+", country="+country;
-	}
 
 	@Override
-	public long getVersion() {
-		return version;
+	public String toString() {
+		return "id=" + id + ", name=" + name + ", country=" + country;
 	}
 }
