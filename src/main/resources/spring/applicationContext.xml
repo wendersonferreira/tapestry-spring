@@ -5,7 +5,7 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<context:component-scan base-package="br.com.trustsystems" />
+	<context:component-scan base-package="com.codeprep" />
 
 	<import resource="applicationContext-dao.xml"/>
 </beans>

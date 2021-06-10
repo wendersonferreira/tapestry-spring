@@ -5,22 +5,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<tx:annotation-driven
-		transaction-manager="transactionManager" proxy-target-class="true" />
+	<tx:annotation-driven />
 
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName"
-			value="com.mysql.cj.jdbc.Driver"></property>
+				  value="org.hsqldb.jdbcDriver"/>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/tapestry"></property>
-		<property name="username" value="tapestryuser"></property>
-		<property name="password" value="tapestry@123"></property>
+				  value="jdbc:hsqldb:mem:tapestry"/>
+		<property name="username" value="sa"/>
+		<property name="password" value=""/>
 	</bean>
 
 	<bean id="mysessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="dataSource" ref="dataSource"/>
 
 		<property name="mappingResources">
 			<list>
@@ -30,7 +29,7 @@
 
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">create</prop>
 				<prop key="hibernate.show_sql">true</prop>
 
@@ -45,10 +44,10 @@
 
 	<bean id="template"
 		class="org.springframework.orm.hibernate5.HibernateTemplate">
-		<property name="sessionFactory" ref="mysessionFactory"></property>
+		<property name="sessionFactory" ref="mysessionFactory"/>
 	</bean>
 
-	<bean id="personDAO" class="br.com.trustsystems.dao.PersonDAO">
-		<property name="template" ref="template"></property>
+	<bean id="personDAO" class="com.codeprep.dao.PersonDAO">
+		<property name="template" ref="template"/>
 	</bean>
 </beans>

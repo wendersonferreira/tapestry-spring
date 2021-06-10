@@ -3,31 +3,24 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.trustsystems</groupId>
+	<groupId>com.codeprep</groupId>
 	<artifactId>tapestry-spring</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-
 	<name>Tapestry-Spring-Hibernate</name>
-	<url>https://github.com/trust-wenderson/tapestry-spring</url>
-
 	<description>An example integration Apache Tapestry 5 and Spring Framework 5 and Hibernate 5 (CRUD)</description>
 	<inceptionYear>2021</inceptionYear>
 
 	<properties>
 		<org.springframework-version>5.2.14.RELEASE</org.springframework-version>
-		<hibernate.version>5.4.22.Final</hibernate.version>
+		<hibernate.version>5.4.27.Final</hibernate.version>
 		<org.aspectj-version>1.8.9</org.aspectj-version>
-		<org.slf4j-version>1.7.21</org.slf4j-version>
-		<commons-io.version>2.4</commons-io.version>
-		<javaee-api.version>6.0</javaee-api.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<junit.version>4.12</junit.version>
-		<mysql.version>8.0.16</mysql.version>
-		<log4j.version>1.2.17</log4j.version>
-		<tapestry.version>5.4.1</tapestry.version>
-		<cglib.version>3.2.4</cglib.version>
+		<hsql.version>2.5.1</hsql.version>
+		<tapestry.version>5.7.2</tapestry.version>
+		<cglib.version>3.3.0</cglib.version>
 	</properties>
 
 	<dependencies>
@@ -82,15 +75,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>${commons-io.version}</version>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsql.version}</version>
 		</dependency>
 
 		<dependency>
@@ -118,13 +105,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>${javaee-api.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.tapestry</groupId>
 			<artifactId>tapestry-spring</artifactId>
 			<version>${tapestry.version}</version>
@@ -135,6 +115,16 @@
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>${cglib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>beanmodel</artifactId>
+			<version>5.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-ioc</artifactId>
+			<version>5.4.1</version>
 		</dependency>
 	</dependencies>
 

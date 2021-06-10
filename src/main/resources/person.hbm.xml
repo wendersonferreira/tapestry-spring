@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="br.com.trustsystems.entities.Person" table="person">
+    <class name="com.codeprep.entities.Person" table="person">
         <id name="id">
             <generator class="identity"/>
         </id>
