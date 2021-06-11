@@ -19,7 +19,7 @@
 		<servlet-api.version>2.5</servlet-api.version>
 		<junit.version>4.12</junit.version>
 		<hsql.version>2.5.1</hsql.version>
-		<tapestry.version>5.7.2</tapestry.version>
+		<tapestry.version>5.4.1</tapestry.version>
 		<cglib.version>3.3.0</cglib.version>
 	</properties>
 

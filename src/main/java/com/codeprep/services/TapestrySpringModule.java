@@ -12,9 +12,7 @@ public class TapestrySpringModule
     @Contribute(SymbolProvider.class)
     public static void configureTapestryHotelBooking(MappedConfiguration<String, String> configuration) 
     {
-        configuration.add(SymbolConstants.SUPPORTED_LOCALES, "pt_BR");
         configuration.add(SymbolConstants.APPLICATION_VERSION, "1.0.0-SNAPSHOT");
         configuration.add(SymbolConstants.PRODUCTION_MODE, "false");
-        configuration.add(SymbolConstants.HMAC_PASSPHRASE,"putyourkeyhere");
     }
 }
