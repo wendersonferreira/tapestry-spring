@@ -52,3 +52,7 @@ Thumbs.db
 activemq-data
 *.hsp
 atlassian-ide-plugin*.xml
+tapestry.lck
+tapestry.log
+tapestry.properties
+tapestry.script

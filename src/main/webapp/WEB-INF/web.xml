@@ -11,7 +11,7 @@
 	
 	<context-param>
 		<param-name>tapestry.app-package</param-name>
-		<param-value>br.com.trustsystems</param-value>
+		<param-value>com.codeprep</param-value>
 	</context-param>
 	
 	<filter>
